@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+	<fieldset><legend>Text: Password</legend>
+	 Text:<input type:"text" name="userid" id="userid"><br>
+	 Paswword:<input type="password" name="pwd" maxlength="5"><br>
+	  <hr>
+	  
+	  Text2: <input type="text" name="data" maxlength="10" size="100px" value="초기값"><br>
+	  <hr>
+	  readonly(읽기전용: 편집불가.. 서버로 데이터 전송 가능)
+	  <input type="text" name="data2" value="hong" readonly="readonly">
+	  <br>
+	  disabled(비활성화: 서버로 데이터 전송 불가능)
+	  <input type="text" name="data3" value="kim" disabled="disabled">
+	</fieldset>
+	<fieldset>
+	 <legend>체크박스(다중선택가능)</legend>
+	 농구:<input type="checkbox" name="sports_1" value="A" checked="checked">
+	 야구:<input type="checkbox" name="sports_2" value="B">
+	 축구:<input type="checkbox" name="sports_3" value="C">
+	 <!-- 
+	 서버: ? sports_1=A&sports_2=B&sports_3=C
+	 	String str = request.getParameter("sports_1")
+	 	>> str 변수에 "A"
+	 	String str2 = request.getParameter("sports_2")
+	 	>> str2 변수에 "B"
+	 	String str3 = request.getParameter("sports_3")
+	 	>> str3 변수에 "C"
+	 	
+	 농구:<input type="checkbox" name="sports" value="A" checked="checked">
+	 야구:<input type="checkbox" name="sports" value="B">
+	 축구:<input type="checkbox" name="sports" value="C">
+	  >>>> ??
+	   서버: ? sports=A&sports=B&sports=C
+	  in this case????
+	  >>>>> 배열로 받음
+	  String[] strarr = request.getParameter("sports");
+	  
+	  String[0] strarr ="A"
+	  String[1] strarr ="B"
+	  String[2] strarr ="C"
+	  
+	  
+	  -->
+	</fieldset>
+	<fieldset>
+	<legend>Select tag (단일 선택: 년,월,일)</legend>
+	<select name="year">
+	<option value="2019">2019년(화면에 보여지는 값)</option>
+	<option value="2018" selected="selected">2018년(화면에 보여지는 값)</option>
+	<option value="2017">2017년(화면에 보여지는 값)</option>
+	</select>
+	
+	<!-- 
+	?year=2017&......
+	 -->
+	</fieldset>
+	
+	
+	<fieldset>
+	<legend>Select tag (다중 선택: checkbox)</legend>
+	<select name="items" multiple>
+	<option value="01">java</option>
+	<option value="02" selected>oracle</option>
+	<option value="03">html</option>
+	</select>
+	
+	<!-- 
+	?items=02&......
+	 -->
+	</fieldset>
+	<fieldset>
+	 	<legend>라디오버튼(단일선택: 남, 여) : name이 동일하면 하나의 그룹으로 묶어줘야해</legend>
+	 	남:<input type="radio" name="gender" value="1" checked="checked">
+	 	여:<input type="radio" name="gender" value="2">
+	</fieldset>
+	
+	<fieldset>
+	<legend>etc</legend>
+	1.화면에 출력이 안되지만 소스는 가지고 있음
+	<input type="hidden" value="1000" name="hdata">
+	<hr>
+	2.파일업로드할때 선택할 수 있는 tag
+	<input type="file" name="uploadimage">
+	<hr>
+	3.게시판에 글쓰기할때 쓰는 tag :여러줄쓰기 가능, 초기크기 설정가능 rows, cols
+	<textarea rows="10" cols="10" name="content"> 입력데이터</textarea>
+	<hr>
+	4.각종버튼들
+	<input type="button" value="나 눌러봐" onclick="alert('졸립다')">
+	<br>
+	<input type="image" src="images/1.jpg">
+	<input type="submit" value="전송">
+	<input type="reset" value="취소">
+	</fieldset>
+	</form>
+</body>
+</html>

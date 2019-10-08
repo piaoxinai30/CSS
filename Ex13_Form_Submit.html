@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>개발자 필수 태그 (암기)</title>
+</head>
+<body>
+<!-- 회원가입, 게시판 글쓰기
+ -->
+ 	<form action="Ex13_login.jsp" method="post">
+ 	 <input type="text" name="userid">
+ 	 <input type="text" name="username">
+ 	<!--   <input type="submit" value="전송하기">-->
+ 	<input type="image" src="images/1.jpg" width="50" height="20">
+ 	 <input type="reset" value="취소하기">
+ 	</form>
+ 	<!-- 
+ 	 form 태그는 전송을 담당하는 태그 >> 서버로(naver..>>web server) 데이터를 보냄  >> Tomcat
+ 	 네이버>> 회원가입 >> 회원가입 페이지>> 정보입력 >>가입하기(전송하기): 네이버 서버에 내가 입력한 정보를 보내는 것
+ 	 >> 입력한 데이터는 네트워크를 통해서 이동(form: 서버까지가는 교통수단)>> 웹서버로!! >> 서버에서는 데이터를 받음 >> jsp(servlet)
+ 	 >>DB연결 >> insert >> 완료 >> 클라이언트에게 정상 처리여부를 안내함
+ 	 
+ 	 form 전송수단 : 2가지 방법
+ 	 method="get"   method="post"
+ 	 웹사이트 주소창 >>
+ 	 get: http://192.168.0.3:8090/WebClient/login.jsp?userid=kglim&username=hong
+ 	 >>웹사이트 주소에 내용이 노출됨
+ 	 >>(link < a href)형식과 같은걸 처리해야할때 사용함
+ 	 
+ 	 post: http://192.168.0.3:8090/WebClient/login.jsp
+ 	 >> :http프로토콜을 사용해 header안에 정보를 숨겨서 전송 (?userid=kglim&username=hong)
+ 	 
+ 	 목적지?(웹서버)??
+ 	 action="" >> 목적지 주소 >> login.jsp
+ 	 
+ 	 form태그의 전송방식 >> post 방식사용
+ 	 <a href="boardDetail.jsp?boardnum=100">글상세</a>
+ 	 >>이런 링크형태의 코드는 get방식만 적용된다.
+ 	 
+ 	  submit/reset  >> 시작!!!
+ 	 1.input type="submit" 전송
+ 	 2.input type="image" 내부적으로 전송 submit 가능을 가지고 있음
+ 	 3.input type-"button" >> javascript 함수 >> document.form.submit() 전송
+ 	 
+ 	 -->
+</body>
+</html>
